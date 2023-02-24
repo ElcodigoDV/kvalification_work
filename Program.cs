@@ -1,4 +1,20 @@
-﻿int Count(string [] array)
+﻿void ShowOneline(string[] array)
+{
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i < array.Length-1)
+        {
+            Console.Write($"\"{array[i]}\", ");
+        }
+        else
+        {
+            Console.Write($"\"{array[i]}\"]");
+        }
+    }
+}
+
+int Count(string [] array)
 {
     int count = 0;
     for (int i = 0; i < array.Length; i++)
@@ -15,6 +31,7 @@ string[] array1 = {"hello", "world", "hi", "Tom", "Jerry", "cat"};
 int count = Count(array1);
 string[] array2 = new string [count];
 int j = 0;
+
 for (int i = 0; i < array1.Length; i++)
 {
     if (array1[i].Length <= 3)
@@ -23,4 +40,7 @@ for (int i = 0; i < array1.Length; i++)
         j ++; 
     }
 }
-Console.WriteLine($"{String.Join(", ", array2)}");
+
+ShowOneline(array1);
+Console.Write(" -> ");
+ShowOneline(array2);
